@@ -1,0 +1,39 @@
+<!--index.vtl-->
+<form action="/game">
+  <div class="form-group">
+    <div class="radio">
+      <label>
+        <input type="radio" name="choice" value="rock" checked>
+        Rock
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="choice" value="paper">
+        Paper
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="choice" value="scissors">
+        Scissors
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn">Play</button>
+</form>
+
+#if ($winner)
+  <div class="row">
+    <div class="col-md-6">
+      <h3>You threw</h3>
+      $game.getImage($userChoice)
+    </div>
+    <div class="col-md-6">
+      <h3>Computer threw</h3>
+      $game.getImage($compChoice)
+    </div>
+  </div>
+  <h1>$winner</h1>
+#end
+<!--index.vtl-->
